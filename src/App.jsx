@@ -5,7 +5,7 @@ import Hero from './sections/Hero'
 function App() {
 
   return (
-    <main className='w-full h-full bg-black'>
+    <main className='w-full h-full'>
       <Nav />
       <section>
         <Hero />

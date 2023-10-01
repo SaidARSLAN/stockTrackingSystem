@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors : {
+        white : "#F1F1F1"
+      },
+      fontFamily : {
+        sans : ['AR One Sans', 'sans-serif'],
+        roboto : ['Roboto', 'sans-serif']
+      }
+    },
   },
   plugins: [],
 }
