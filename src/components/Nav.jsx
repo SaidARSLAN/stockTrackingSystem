@@ -31,8 +31,8 @@ const Nav = () => {
         </div>
         <div className={toggle ? 'flex bg-white px-8 py-4 absolute right-8 rounded-md top-24 lg:hidden scale-up-center' : "hidden"}>
           <ul className='flex flex-col items-start justify-center space-y-4'>
-            {navLinks.map((link) => {
-                    return <a href={link.link} className='font-roboto text-xl'>{link.name}</a>
+            {navLinks.map((link,idx) => {
+                    return <a href={link.link} key={idx} className='font-roboto text-xl'>{link.name}</a>
             })}
             </ul>
         </div>
