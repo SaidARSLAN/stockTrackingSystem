@@ -11,7 +11,7 @@ const Nav = () => {
   }
 
   return (
-    <div className='w-full flex px-8 py-12 items-center justify-between relative'>
+    <div className='w-full flex px-12 py-12 items-center justify-between relative'>
         <div className='flex items-center justify-center'>
             <a href="/">
             <img src={logo} className='lg:w-72 w-48 cursor-pointer max-[320px]:w-36'/>
@@ -20,7 +20,7 @@ const Nav = () => {
         <div className='hidden lg:flex  w-full'>
           <ul className='flex flex-1 items-center justify-center'>
           {navLinks.map((link,idx) => {
-                  return <a href={link.link} key={idx} className='text-white mr-24 text-xl font-bold font-roboto'>{link.name}</a>
+                  return <a href={link.link} key={idx} className='text-white mr-24 text-xl  font-roboto'>{link.name}</a>
           })}
           </ul>
         </div>
