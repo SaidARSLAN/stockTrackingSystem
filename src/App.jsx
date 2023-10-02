@@ -19,7 +19,7 @@ function App() {
       <section>
         <About />
       </section>
-      <section>
+      <section className='flex items-center justify-center w-full'>
         <Learn />
       </section>
       </Provider>
