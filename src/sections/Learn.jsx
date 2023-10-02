@@ -8,7 +8,7 @@ const Learn = () => {
     const [toggleFour, setToggleFour] = useState(false)
 
   return (
-    <div className='flex flex-col justify-center items-center  space-y-12 customBG w-2/3 py-12'>
+    <div className='flex flex-col justify-center items-center  space-y-12 customBG w-2/3 py-12 rounded-lg'>
                     <h1 className='text-white font-roboto text-3xl font-bold lg:text-6xl'>More Than A Wallet</h1>
                 <div className='flex flex-col justify-center items-center lg:flex-row'>
                 <ul className='flex flex-col items-center justify-center space-y-4 w-full px-12 lg:w-2/3'>
