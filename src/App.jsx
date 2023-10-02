@@ -1,9 +1,11 @@
+import { Route, Router, Routes } from 'react-router-dom'
 import './App.css'
 import Nav from './components/Nav'
 import { Provider } from './context/MainContext'
 import About from './sections/About'
 import Companies from './sections/Companies'
 import Hero from './sections/Hero'
+import Learn from './sections/Learn'
 
 function App() {
 
@@ -18,7 +20,7 @@ function App() {
         <About />
       </section>
       <section>
-        <Companies />
+        <Learn />
       </section>
       </Provider>
     </main>
