@@ -7,6 +7,7 @@ import Hero from './sections/Hero'
 import Learn from './sections/Learn'
 import ChooseUs from './sections/ChooseUs'
 import CoWorkers from './sections/CoWorkers'
+import Footer from './sections/Footer'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
       <section>
         <CoWorkers />
       </section>
+      <Footer />
       </Provider>
     </main>
   )
