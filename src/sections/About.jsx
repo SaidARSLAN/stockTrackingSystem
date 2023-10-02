@@ -3,7 +3,7 @@ import aboutLogo from '../assets/aboutLogo.png'
 import { NavLink } from 'react-router-dom'
 const About = () => {
   return (
-    <div className='flex items-center justify-center w-full h-full flex-col lg:flex-row-reverse py-24 lg:px-12'>
+    <div className='flex items-center justify-center w-full h-full flex-col-reverse lg:flex-row-reverse py-24 lg:px-12'>
         <div className='flex items-center justify-center w-full h-full flex-col space-y-8 lg:items-start'>
             <h3 className='text-base font-roboto text-white tracking-wide px-4 lg:text-lg'>About Us</h3>
             <h1 className='text-white font-roboto text-3xl text-center px-4 lg:text-6xl lg:text-left'>What is Financial Wallet and Tracking? What are we providing?</h1>

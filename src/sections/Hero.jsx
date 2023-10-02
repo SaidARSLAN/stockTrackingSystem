@@ -17,7 +17,7 @@ const Hero = () => {
                     <p className='text-white text-xs px-2 font-roboto cursor-default lg:text-base'>More then 1600 people choose us. Why you are waiting for?</p>
                 </div>
                 </div>
-                <div className='flex items-center justify-center w-full'>
+                <div className='lg:flex items-center justify-center w-full hidden'>
                     <img src={heroLogo} className='w-[720px] lg:w-[720px]'/>
                  </div>
     </div>
