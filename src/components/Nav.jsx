@@ -20,7 +20,7 @@ const Nav = () => {
         <div className='hidden lg:flex  w-full'>
           <ul className='flex flex-1 items-center justify-center'>
           {navLinks.map((link,idx) => {
-                  return <a href={link.link} key={idx} className='text-white mr-24 text-xl  font-roboto'>{link.name}</a>
+                  return <a href={link.link} key={idx} className='text-white mr-12 font-bold text-xl  font-roboto'>{link.name}</a>
           })}
           </ul>
         </div>

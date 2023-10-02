@@ -6,6 +6,7 @@ import About from './sections/About'
 import Hero from './sections/Hero'
 import Learn from './sections/Learn'
 import ChooseUs from './sections/ChooseUs'
+import CoWorkers from './sections/CoWorkers'
 
 function App() {
 
@@ -24,6 +25,9 @@ function App() {
       </section>
       <section className='flex items-center justify-center w-full'>
         <ChooseUs />
+      </section>
+      <section>
+        <CoWorkers />
       </section>
       </Provider>
     </main>
