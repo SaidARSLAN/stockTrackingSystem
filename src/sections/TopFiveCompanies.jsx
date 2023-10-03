@@ -52,7 +52,7 @@ const TopFiveCompanies = () => {
     <div className='flex flex-col items-center justify-center w-full px-12 my-12 lg:flex-row'>
         <div className='lg:flex flex-col space-y-4 w-1/3 hidden'>
             {companies.map((company) => {
-                return <button className='text-white text-2xl border-2 px-4 py-4 flex items-center justify-start customBG font-roboto font-bold tracking-widest' onClick={() => setCurrCompany(company.value)}>{company.name}</button>
+                return <button className='text-white text-2xl border-2 px-4 py-4 flex items-center justify-start customBG font-roboto font-bold tracking-widest rounded-lg' onClick={() => setCurrCompany(company.value)}>{company.name}</button>
             })}
         </div>
         <div className='flex space-x-12 items-center justify-center lg:hidden'>
@@ -66,14 +66,14 @@ const TopFiveCompanies = () => {
                 <button onClick={() => dispatch("increment")}><IoIosArrowForward size={35} color='white'/></button>
             </div>
         </div>
-            <div className='flex w-full flex-col justify-between items-center border-2 py-4 px-12 my-8 customBG hover:bg-gray-600 cursor-pointer lg:w-2/3 lg:ml-24' onClick={() => setToggle(!toggle)}>
+            <div className='flex w-full flex-col justify-between items-center border-2 py-4 px-12 my-8 customBG hover:bg-gray-600 cursor-pointer lg:w-2/3 lg:ml-24 rounded-lg' onClick={() => setToggle(!toggle)}>
             <div className='flex w-full items-center justify-between'>
             <div className='flex items-center justify-center space-x-2'>
             <img src={currCompanyInfos.image} className='w-10'/>
             <h1 className='text-white font-roboto font-bold'>{currCompanyInfos.companyName}</h1>
             </div>
             <div className='flex items-center justify-center'>
-            <p className='flex text-green-500'>{currCompanyInfos.price}</p>
+            <p className='flex text-green-500'>{currCompanyInfos.price} $</p>
             </div>
             </div>
             <div className='w-full flex flex-col justify-center my-4'>
