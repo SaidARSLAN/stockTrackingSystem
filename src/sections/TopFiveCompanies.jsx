@@ -45,7 +45,7 @@ const TopFiveCompanies = () => {
     
     
     return (
-    <div className='flex flex-col items-center justify-center w-full px-12'>
+    <div className='flex flex-col items-center justify-center w-full px-12 my-12'>
         <div className='flex space-x-12 items-center justify-center'>
             <div className='flex items-center justify-center'>
                 <button onClick={() => dispatch("decrement")}><IoIosArrowBack size={35} color='white'/></button>
@@ -69,7 +69,7 @@ const TopFiveCompanies = () => {
             </div>
             <div className='w-full flex flex-col justify-center my-4'>
             <p className='text-xs text-white font-roboto'>{currCompanyInfos.ipoDate}</p>
-            <p className='text-white font-roboto font-bold'>{currCompanyInfos.ceo}</p>
+            <p className='text-white font-roboto font-bold my-1'>{currCompanyInfos.ceo}</p>
             <p className={toggle ? 'max-h-96 text-white overflow-auto duration-200 customBG px-4 py-4 font-roboto text-xs my-4' :'h-0 overflow-hidden'}>{currCompanyInfos.description}</p>
             </div>
             </div>
