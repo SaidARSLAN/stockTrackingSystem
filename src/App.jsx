@@ -9,33 +9,18 @@ import ChooseUs from './sections/ChooseUs'
 import CoWorkers from './sections/CoWorkers'
 import Footer from './sections/Footer'
 import TopFiveCompanies from './sections/TopFiveCompanies'
+import SignUp from './pages/SignUp'
+import MainPage from './pages/MainPage'
 
 function App() {
 
   return (
     <main className='w-full h-full overflow-x-hidden'>
-      <Provider>
       <Nav />
-      <section>
-        <Hero />
-      </section>
-      <section>
-        <TopFiveCompanies />
-      </section>
-      <section>
-        <About />
-      </section>
-      <section className='flex items-center justify-center w-full'>
-        <Learn />
-      </section>
-      <section className='flex items-center justify-center w-full'>
-        <ChooseUs />
-      </section>
-      <section>
-        <CoWorkers />
-      </section>
-      <Footer />
-      </Provider>
+      <Routes>
+        <Route path="/main" element={<MainPage />} />
+        <Route path='/signup' element={<SignUp />}/>
+      </Routes>
     </main>
   )
 }
