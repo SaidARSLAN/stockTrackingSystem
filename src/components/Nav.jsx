@@ -14,7 +14,7 @@ const Nav = () => {
   return (
     <div className='w-full flex px-12 py-12 items-center justify-between relative'>
         <div className='flex items-center justify-center'>
-            <NavLink to="/main">
+            <NavLink to="/">
             <img src={logo} className='lg:w-72 w-48 cursor-pointer max-[320px]:w-36'/>
             </NavLink>
             </div>
