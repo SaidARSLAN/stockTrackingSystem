@@ -9,7 +9,7 @@ export const Provider = ({children}) => {
     const [currCompanyInfos, setCurrCompanyInfos] = useState([])
 
     const sendCompanyValue = async (value) =>{
-        const request = await axios.get(`https://financialmodelingprep.com/api/v3/profile/${value}?apikey=3655fc99b3f9ae959a28d59388ed8dfc`);
+        const request = await axios.get(`https://financialmodelingprep.com/api/v3/profile/${value}?apikey=4c824916585e48358ff4037bef8ae1b6`);
         setCurrCompanyInfos(request.data[0])
     }
 
