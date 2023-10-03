@@ -30,16 +30,20 @@ const Nav = () => {
               <div className='w-[30px] h-[3px] bg-white'></div>
               <div className='w-[30px] h-[3px] bg-white'></div>
         </div>
-        <div className={toggle ? 'flex bg-white px-8 py-4 absolute right-8 rounded-md top-24 lg:hidden scale-up-center' : "hidden"}>
+        <div className={toggle ? 'flex flex-col customBG bg-white px-8 py-4 absolute right-8 rounded-md top-24 lg:hidden scale-up-center' : "hidden"}>
           <ul className='flex flex-col items-start justify-center space-y-4'>
             {navLinks.map((link,idx) => {
-                    return <a href={link.link} key={idx} className='font-roboto text-xl'>{link.name}</a>
+                    return <a href={link.link} key={idx} className='font-roboto  text-white text-xl'>{link.name}</a>
             })}
             </ul>
+            <div className='flex flex-col space-y-2 items-start justify-center my-4'>
+              <p className='text-white cursor-pointer font-roboto text-lg font-bold'>Sign In</p>
+              <NavLink to="/signup" className='bg-black text-white px-4 py-2 font-bold text-sm rounded-md'>Sign Up</NavLink>
+        </div>
         </div>
         <div className='hidden lg:flex items-center flex-1 space-x-8 w-full whitespace-nowrap px-4'>
               <p className='text-white cursor-pointer font-roboto text-lg font-bold'>Sign In</p>
-              <NavLink to="/signup" className='bg-white text-black px-4 py-2 font-bold text-lg rounded-md'>Sign Up</NavLink>
+              <NavLink to="/signup" className='bg-white text-black px-4 py-2 font-bold text-lg  rounded-md'>Sign Up</NavLink>
         </div>
     </div>
   )
