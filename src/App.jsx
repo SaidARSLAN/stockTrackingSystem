@@ -8,6 +8,7 @@ import Learn from './sections/Learn'
 import ChooseUs from './sections/ChooseUs'
 import CoWorkers from './sections/CoWorkers'
 import Footer from './sections/Footer'
+import TopFiveCompanies from './sections/TopFiveCompanies'
 
 function App() {
 
@@ -17,6 +18,9 @@ function App() {
       <Nav />
       <section>
         <Hero />
+      </section>
+      <section>
+        <TopFiveCompanies />
       </section>
       <section>
         <About />
