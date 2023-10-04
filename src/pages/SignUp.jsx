@@ -9,10 +9,10 @@ const SignUp = () => {
         <img src={signup}/>
       </div>
         <form className='w-full h-full flex items-center justify-start flex-col space-y-4'>
-              <input className='w-[480px] px-4 py-4 border-2 border-gray-600 duration-200 hover:border-white customBG text-white' placeholder='Name And Surname'/>
+              <input className='w-[480px] px-4 py-4 border-2 border-gray-600 duration-200 hover:border-white customBG text-white' placeholder='Username'/>
               <input className='w-[480px] px-4 py-4 border-2 border-gray-600 duration-200 hover:border-white customBG text-white' placeholder='Email'/>
-              <input className='w-[480px] px-4 py-4 border-2 border-gray-600 duration-200 hover:border-white customBG text-white' placeholder='Password'/>
-              <input className='w-[480px] px-4 py-4 border-2 border-gray-600 duration-200 hover:border-white customBG text-white' placeholder='Password Confirm'/>
+              <input className='w-[480px] px-4 py-4 border-2 border-gray-600 duration-200 hover:border-white customBG text-white' type='password' placeholder='Password'/>
+              <input className='w-[480px] px-4 py-4 border-2 border-gray-600 duration-200 hover:border-white customBG text-white' type='password' placeholder='Password Confirm'/>
               <div className='w-[480px] flex items-center justify-center lg:justify-start'>
               <button className='w-[200px] customBG px-4 py-2 text-gray-400 font-bold font-roboto tracking-widest hover:text-white duration-200 text-lg'>Sign Up</button>
               </div>

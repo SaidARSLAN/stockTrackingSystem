@@ -84,7 +84,7 @@ const TopFiveCompanies = () => {
             </div>
             </div> : <div className='w-full flex items-center justify-center flex-col'>
                     <AiOutlineLoading3Quarters size={50} color='white' className='animate-spin'/>
-                    <h1 className='text-white my-2'>Loading...</h1>
+                    <h1 className='text-white my-2 font-roboto'>Loading...</h1>
             </div>}
         </>
 
