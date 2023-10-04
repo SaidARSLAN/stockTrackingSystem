@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useReducer, useState } from 'react'
 import {IoIosArrowBack, IoIosArrowForward} from 'react-icons/io'
+import {AiOutlineLoading3Quarters} from 'react-icons/ai'
 import GlobalContext from '../context/MainContext';
 const initialValue = 0;
 
@@ -33,7 +34,6 @@ const reducer = (state,action) => {
 }
 
 const TopFiveCompanies = () => {
-
     const {sendCompanyValue,currCompanyInfos} = useContext(GlobalContext)
     const [count,dispatch] = useReducer(reducer,initialValue);
     const [currCompany, setCurrCompany] = useState(companies[count].value);
@@ -47,7 +47,6 @@ const TopFiveCompanies = () => {
     useEffect(() => {
         sendCompanyValue(currCompany);
     },[currCompany])
-    
     return (
     <div className='flex flex-col items-center justify-center w-full px-12 my-12 lg:flex-row'>
         <div className='lg:flex flex-col space-y-4 w-1/3 hidden'>
@@ -66,7 +65,9 @@ const TopFiveCompanies = () => {
                 <button onClick={() => dispatch("increment")}><IoIosArrowForward size={35} color='white'/></button>
             </div>
         </div>
-            <div className='flex w-full flex-col justify-between items-center border-2 py-4 px-12 my-8 customBG hover:bg-gray-600 cursor-pointer lg:w-2/3 lg:ml-24 rounded-lg' onClick={() => setToggle(!toggle)}>
+        <>    
+            {currCompanyInfos.length > 0 ? <div className='flex w-full flex-col justify-between items-center border-2 py-4 px-12 my-8 customBG hover:bg-gray-600 cursor-pointer lg:w-2/3 lg:ml-24 rounded-lg' onClick={() => setToggle(!toggle)}>
+            
             <div className='flex w-full items-center justify-between'>
             <div className='flex items-center justify-center space-x-2'>
             <img src={currCompanyInfos.image} className='w-10'/>
@@ -81,7 +82,12 @@ const TopFiveCompanies = () => {
             <p className='text-white font-roboto font-bold my-1'>{currCompanyInfos.ceo}</p>
             <p className={toggle ? 'max-h-96 text-white overflow-auto duration-200 customBG px-4 py-4 font-roboto text-xs my-4' :'h-0 lg:h-72 lg:text-white lg:overflow-auto overflow-hidden'}>{currCompanyInfos.description}</p>
             </div>
-            </div>
+            </div> : <div className='w-full flex items-center justify-center'>
+                    <AiOutlineLoading3Quarters size={50} color='white' className='animate-spin'/>
+            </div>}
+        </>
+
+            
         </div>
   )
 }
