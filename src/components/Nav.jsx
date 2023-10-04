@@ -37,12 +37,12 @@ const Nav = () => {
             })}
             </ul>
             <div className='flex flex-col space-y-2 items-start justify-center my-4'>
-              <p className='text-white cursor-pointer font-roboto text-lg font-bold'>Sign In</p>
+            <NavLink to="/signin" className='text-white cursor-pointer font-roboto text-lg font-bold'>Sign In</NavLink>
               <NavLink to="/signup" className='bg-black text-white px-4 py-2 font-bold text-sm rounded-md'>Sign Up</NavLink>
         </div>
         </div>
         <div className='hidden lg:flex items-center flex-1 space-x-8 w-full whitespace-nowrap px-4'>
-              <p className='text-white cursor-pointer font-roboto text-lg font-bold'>Sign In</p>
+              <NavLink to="/signin" className='text-white cursor-pointer font-roboto text-lg font-bold'>Sign In</NavLink>
               <NavLink to="/signup" className='bg-white text-black px-4 py-2 font-bold text-lg  rounded-md'>Sign Up</NavLink>
         </div>
     </div>

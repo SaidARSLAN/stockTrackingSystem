@@ -11,6 +11,7 @@ import Footer from './sections/Footer'
 import TopFiveCompanies from './sections/TopFiveCompanies'
 import SignUp from './pages/SignUp'
 import MainPage from './pages/MainPage'
+import SignIn from './pages/SignIn'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="signin" element={<SignIn />} />
         <Route path='/signup' element={<SignUp />}/>
       </Routes>
     </main>
