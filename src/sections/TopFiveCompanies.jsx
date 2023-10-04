@@ -82,8 +82,9 @@ const TopFiveCompanies = () => {
             <p className='text-white font-roboto font-bold my-1'>{currCompanyInfos.ceo}</p>
             <p className={toggle ? 'max-h-96 text-white overflow-auto duration-200 customBG px-4 py-4 font-roboto text-xs my-4' :'h-0 lg:h-72 lg:text-white lg:overflow-auto overflow-hidden'}>{currCompanyInfos.description}</p>
             </div>
-            </div> : <div className='w-full flex items-center justify-center'>
+            </div> : <div className='w-full flex items-center justify-center flex-col'>
                     <AiOutlineLoading3Quarters size={50} color='white' className='animate-spin'/>
+                    <h1 className='text-white my-2'>Loading...</h1>
             </div>}
         </>
 
