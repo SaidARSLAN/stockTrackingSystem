@@ -11,7 +11,7 @@ const imageVariant = {
     opacity : 1,
     transition : {
       delay : 1.3,
-      duration : 1
+      duration : 1  
     }
   }
 }
