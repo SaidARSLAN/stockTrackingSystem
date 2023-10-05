@@ -1,6 +1,5 @@
 import React from 'react'
 import Hero from '../sections/Hero'
-import TopFiveCompanies from '../sections/TopFiveCompanies'
 import About from '../sections/About'
 import Learn from '../sections/Learn'
 import ChooseUs from '../sections/ChooseUs'
@@ -11,7 +10,7 @@ import { Provider } from '../context/MainContext'
 const MainPage = () => {
   return (
     <Provider >
-        <section className='w-full h-full bg-hero-pattern bg-cover bg-no-repeat bg-center '>
+        <section className='w-full h-full bg-[url("./src/assets/herobackground.jpg")] bg-cover bg-no-repeat bg-center '>
         <Hero />
       </section>
       <section>
