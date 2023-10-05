@@ -10,7 +10,7 @@ import { Provider } from '../context/MainContext'
 const MainPage = () => {
   return (
     <Provider >
-        <section className='w-full h-full bg-[url("./src/assets/herobackground.jpg")] bg-cover bg-no-repeat bg-center '>
+        <section className='w-full h-full heroBackground'>
         <Hero />
       </section>
       <section>
