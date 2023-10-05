@@ -11,7 +11,7 @@ import { Provider } from '../context/MainContext'
 const MainPage = () => {
   return (
     <Provider >
-        <section>
+        <section className='w-full h-full bg-hero-pattern bg-cover bg-no-repeat bg-center '>
         <Hero />
       </section>
       <section>

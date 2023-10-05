@@ -9,7 +9,7 @@ import Profile from './pages/Profile'
 function App() {
 
   return (
-    <main className='w-full h-full overflow-x-hidden bg-hero-pattern bg-cover bg-no-repeat bg-center'>
+    <main className='w-full h-full overflow-x-hidden'>
       <Nav />
       <Routes>
         <Route path="/" element={<MainPage />} />
