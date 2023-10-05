@@ -6,18 +6,7 @@ import { motion } from 'framer-motion'
 
 
 
-const containerVariant = {
-  before : {
-    y : "-100vw"
-  },
-  after : {
-    y : "0",
-    transition : {
-      type : "spring",
-      stiffness : 40
-    }
-  }
-}
+
 
 const Nav = () => {
   const [toggle, setToggle] = useState(false)
@@ -28,7 +17,7 @@ const Nav = () => {
   }
 
   return (
-    <motion.div className='w-full flex px-12 py-12 items-center justify-between relative' variants={containerVariant} initial="before" animate="after">
+    <motion.div className='w-full flex px-12 py-12 items-center justify-between relative'>
         <div className='flex items-center justify-center'>
             <NavLink to="/">
             <img src={logo} className='lg:w-72 w-48 cursor-pointer max-[320px]:w-36'/>
@@ -37,7 +26,7 @@ const Nav = () => {
         <div className='hidden lg:flex  w-full'>
           <ul className='flex flex-1 items-center justify-center'>
           {navLinks.map((link,idx) => {
-                  return <a href={link.link} key={idx} className='text-white mr-12 font-bold text-xl  font-roboto'>{link.name}</a>
+                  return <a href={link.link} key={idx} className='text-white mr-12 text-xl font-roboto'>{link.name}</a>
           })}
           </ul>
         </div>

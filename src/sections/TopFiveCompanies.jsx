@@ -66,7 +66,7 @@ const TopFiveCompanies = () => {
             </div>
         </div>
         <>    
-            {currCompanyInfos.length > 0 ? <div className='flex w-full flex-col justify-between items-center border-2 py-4 px-12 my-8 customBG hover:bg-gray-600 cursor-pointer lg:w-2/3 lg:ml-24 rounded-lg' onClick={() => setToggle(!toggle)}>
+            {currCompanyInfos.length !== 0 ? <div className='flex w-full flex-col justify-between items-center border-2 py-4 px-12 my-8 customBG hover:bg-gray-600 cursor-pointer lg:w-2/3 lg:ml-24 rounded-lg' onClick={() => setToggle(!toggle)}>
             
             <div className='flex w-full items-center justify-between'>
             <div className='flex items-center justify-center space-x-2'>
