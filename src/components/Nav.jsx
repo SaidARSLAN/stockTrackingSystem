@@ -1,8 +1,24 @@
 import React, { useState } from 'react'
 import logo from '../assets/logo.png'
-import {GrMenu} from 'react-icons/gr'
 import { navLinks } from '../contains'
 import { NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
+
+
+const containerVariant = {
+  before : {
+    y : "-100vw"
+  },
+  after : {
+    y : "0",
+    transition : {
+      type : "spring",
+      stiffness : 50,
+    }
+  }
+}
+
 const Nav = () => {
   const [toggle, setToggle] = useState(false)
 
@@ -12,7 +28,7 @@ const Nav = () => {
   }
 
   return (
-    <div className='w-full flex px-12 py-12 items-center justify-between relative'>
+    <motion.div className='w-full flex px-12 py-12 items-center justify-between relative' variants={containerVariant} initial="before" animate="after">
         <div className='flex items-center justify-center'>
             <NavLink to="/">
             <img src={logo} className='lg:w-72 w-48 cursor-pointer max-[320px]:w-36'/>
@@ -45,7 +61,7 @@ const Nav = () => {
               <NavLink to="/signin" className='text-white cursor-pointer font-roboto text-lg font-bold'>Sign In</NavLink>
               <NavLink to="/signup" className='bg-white text-black px-4 py-2 font-bold text-lg  rounded-md'>Sign Up</NavLink>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

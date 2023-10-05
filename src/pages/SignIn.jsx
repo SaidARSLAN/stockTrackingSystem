@@ -7,28 +7,59 @@ const userInfo = {
     "username" : "admin",
     "password" : "admin"
 }
+const loginImageVariant = {
+  before : {
+    x: "-100vw"
+  },
+  after : {
+    x : 0,  
+    transition : {
+        stiffness : 120
+    }
+  }
+}
+const loginFormVariant = {
+  before : {
+    x: "100vw"
+  },
+  after : {
+    x : 0,  
+    transition : {
+        stiffness : 120
+    }
+  }
+}
+const headerVariant = {
+  before : { 
+    opacity : 0
+  },
+  after : {
+    opacity : 1,
+    transition : {
+        delay : 0.6
+    }
+  }
+}
 
 const SignUp = () => {
     let navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password,setPassword] = useState("");
-    const [loginControl, setLoginControl] = useState(false)
     const handleClick = (event) => {
         event.preventDefault();
             if (username === userInfo.username && password === userInfo.password) {
-                setLoginControl(true);
                 navigate('/profile');
             }
     }
 
   return (
     <div className='flex flex-col  justify-center space-y-4 my-4 lg:px-12 px-4'>
-      <motion.h1 className='text-3xl  lg:text-6xl my-4 text-center lg:text-left font-roboto font-bold text-white tracking-widest lg:px-12' initial={{y:"-100vw"}} animate={{y:"0"}}>Sign In</motion.h1>
+      <motion.h1 className='text-3xl  lg:text-6xl my-4 text-center lg:text-left font-roboto font-bold text-white tracking-widest lg:px-12' variants={headerVariant} initial="before" animate="after">Sign In</motion.h1>
     <div className='flex items-center  justify-center w-full'>
-      <motion.div className=' flex items-center justify-center w-2/3' initial={{x:"-100vw"}} animate={{x:0}}>
+      <motion.div className=' flex items-center justify-center w-2/3' variants={loginImageVariant} initial="before" animate="after">
         <img src={signup}/>
       </motion.div>
-        <motion.form initial={{x:"100vw"}} animate={{x:0}} transition={{type:'spring', stiffness:120}} className='w-full h-full flex items-center justify-start flex-col space-y-4'>
+        <motion.form variants={loginFormVariant} initial="before" animate="after" className='w-full h-full flex items-center justify-start flex-col space-y-4'>
               <input className='w-[480px] px-4 py-4 border-2 border-gray-600 duration-200 hover:border-white customBG text-white' value={username} onChange={e => setUsername(e.target.value)} placeholder='Username'/>
               <input type='password' className='w-[480px] px-4 py-4 border-2 border-gray-600 duration-200 hover:border-white customBG text-white' value={password} onChange={e => setPassword(e.target.value)}  placeholder='Password'/>
               <div className='w-[480px] flex items-center justify-center lg:justify-start'>
