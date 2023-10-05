@@ -3,7 +3,7 @@ import React from 'react'
 import {BsChevronCompactDown} from 'react-icons/bs'
 const containerVariable = {
   before : {
-    y : 100,
+    y : 150,
     opacity : 0
   },
   after : {
@@ -11,7 +11,7 @@ const containerVariable = {
     opacity : 1,
     transition : {
       type : "tween",
-      duration : 0.55,
+      duration : 0.50,
       ease : "easeOut"
     }
   }
