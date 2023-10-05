@@ -1,14 +1,6 @@
-import { Route, Router, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Nav from './components/Nav'
-import { Provider } from './context/MainContext'
-import About from './sections/About'
-import Hero from './sections/Hero'
-import Learn from './sections/Learn'
-import ChooseUs from './sections/ChooseUs'
-import CoWorkers from './sections/CoWorkers'
-import Footer from './sections/Footer'
-import TopFiveCompanies from './sections/TopFiveCompanies'
 import SignUp from './pages/SignUp'
 import MainPage from './pages/MainPage'
 import SignIn from './pages/SignIn'
@@ -17,7 +9,7 @@ import Profile from './pages/Profile'
 function App() {
 
   return (
-    <main className='w-full h-full overflow-x-hidden'>
+    <main className='w-full h-full overflow-x-hidden bg-hero-pattern bg-cover bg-no-repeat bg-center'>
       <Nav />
       <Routes>
         <Route path="/" element={<MainPage />} />

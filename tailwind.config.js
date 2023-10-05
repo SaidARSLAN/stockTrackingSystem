@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import heroImage from './src/assets/herobackground.jpg'
 export default {
   content: [
     "./index.html",
@@ -12,6 +13,9 @@ export default {
       fontFamily : {
         sans : ['AR One Sans', 'sans-serif'],
         roboto : ['Roboto', 'sans-serif']
+      },
+      backgroundImage : {
+        'hero-pattern' : "url('./src/assets/herobackground.jpg')"
       }
     },
   },

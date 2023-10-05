@@ -15,9 +15,6 @@ const MainPage = () => {
         <Hero />
       </section>
       <section>
-        <TopFiveCompanies />
-      </section>
-      <section>
         <About />
       </section>
       <section className='flex items-center justify-center w-full'>
