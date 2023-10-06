@@ -7,17 +7,30 @@ const GlobalContext = createContext();
 
 export const Provider = ({children}) => {
     const [currCompanyInfos, setCurrCompanyInfos] = useState([])
-
-    const sendCompanyValue = async (value) =>{
-        const request = await axios.get(`https://financialmodelingprep.com/api/v3/profile/${value}?apikey=4c824916585e48358ff4037bef8ae1b6`);
-        setCurrCompanyInfos(request.data[0])
+    const companies = ["AAPL","TSLA","AMZN","WMT","MSFT"]
+    const getCompany = async () =>{
+            const requests = companies.map((company) => {
+                console.log(company)
+                return axios.get(`https://financialmodelingprep.com/api/v3/profile/${company}?apikey=4c824916585e48358ff4037bef8ae1b6`)
+            });
+        try {
+            const responses = await axios.all(requests);
+            console.log(responses)
+            const data = responses.map((response) => response.data);
+            setCurrCompanyInfos(data)
+            console.log(currCompanyInfos);
+        }
+        catch (error) {
+            console.log("Error fetching company data",error);
+        }
     }
    
-    console.log(document.body.scrollTop)
-
+    useEffect(() => {
+        getCompany();
+    },[])
 
     return (
-        <GlobalContext.Provider value={{sendCompanyValue,currCompanyInfos}}>
+        <GlobalContext.Provider value={{currCompanyInfos}}>
             {children}
         </GlobalContext.Provider>
     )
