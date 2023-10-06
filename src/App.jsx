@@ -7,7 +7,7 @@ function App() {
 
 
   return (
-    <main className='heroBackground'>
+    <main className='heroBackground overflow-x-hidden'>
       <Nav />
       <Routes>
         <Route path="/" element={<MainPage />} />
