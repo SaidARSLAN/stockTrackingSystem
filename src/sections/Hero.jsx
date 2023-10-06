@@ -1,17 +1,13 @@
 import { motion } from 'framer-motion'
 import React from 'react'
-import {BsChevronCompactDown} from 'react-icons/bs'
 const containerVariable = {
   before : {
-    y : 150,
     opacity : 0
   },
   after : {
-    y : 0,
     opacity : 1,
     transition : {
-      type : "tween",
-      duration : 0.50,
+      delay : 0.75,
       ease : "easeOut"
     }
   }
