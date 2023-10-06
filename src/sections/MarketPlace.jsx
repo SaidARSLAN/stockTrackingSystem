@@ -4,7 +4,7 @@ import GlobalContext from '../context/MainContext'
 const MarketPlace = () => {
     const {currCompanyInfos} = useContext(GlobalContext)
   return (
-    <section id='market' className='grid grid-cols-1 w-full px-12 gap-y-4'>
+    <section id='market' className='grid grid-cols-1 w-full px-12 gap-y-4 py-20 lg:py-0'>
         <div className='w-full'>
             <h1 className='text-white font-roboto text-3xl font-bold text-center lg:text-left lg:text-5xl my-4'>Market Update</h1>
         </div>
