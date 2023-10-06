@@ -7,7 +7,7 @@ const containerVariable = {
   after : {
     opacity : 1,
     transition : {
-      delay : 0.75,
+      delay : 1,
       ease : "easeOut"
     }
   }
