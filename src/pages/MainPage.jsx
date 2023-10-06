@@ -8,10 +8,10 @@ const MainPage = () => {
 
   return (
     <Provider >
-        <section>
+        <section className='py-12'>
         <Hero />
       </section>
-      <section>
+      <section className='py-24'>
         <ChooseUs />
       </section>
       <Footer />

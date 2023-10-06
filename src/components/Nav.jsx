@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import logo from '../assets/logo.png'
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
@@ -46,7 +46,16 @@ const hiddenNavbarVariant = {
 }
 
 const Nav = () => {
+  const hamburgerRef = useRef();
   const [isOpen, setIsOpen] = useState(false);
+  
+  window.addEventListener("click",(event) => {
+      if (isOpen === true && !hamburgerRef.current.contains(event.target)) {
+          setIsOpen(false)
+      }
+  })
+
+
   return (
     <nav className='w-full flex items-center justify-between py-12 px-12 max-[320px]:px-6'>
 
@@ -65,10 +74,10 @@ const Nav = () => {
       </ul>
 
       {/* Hamburger Section with Motion! */}
-      <motion.div className='lg:hidden grid grid-cols-1 gap-y-2 cursor-pointer' onClick={() => {setIsOpen(!isOpen)}}>
-        <motion.div className='w-[35px] h-[4px] bg-white' variants={topLineVariant} animate={isOpen ? "open" : "closed"}></motion.div>
-        <motion.div className='w-[35px] h-[4px] bg-white' variants={centerLineVariant} animate={isOpen ? "open" : "closed"}></motion.div>
-        <motion.div className='w-[35px] h-[4px] bg-white' variants={bottomLineVariant} animate={isOpen ? "open" : "closed"}></motion.div>
+      <motion.div  ref={hamburgerRef} className='lg:hidden grid grid-cols-1 gap-y-2 cursor-pointer' onClick={() => {setIsOpen(!isOpen)}}>
+        <motion.div ref={hamburgerRef} className='w-[35px] h-[4px] bg-white' variants={topLineVariant} animate={isOpen ? "open" : "closed"}></motion.div>
+        <motion.div ref={hamburgerRef} className='w-[35px] h-[4px] bg-white' variants={centerLineVariant} animate={isOpen ? "open" : "closed"}></motion.div>
+        <motion.div ref={hamburgerRef} className='w-[35px] h-[4px] bg-white' variants={bottomLineVariant} animate={isOpen ? "open" : "closed"}></motion.div>
       </motion.div>
 
       {/* Hidden navbar items with hamburger toggle */}

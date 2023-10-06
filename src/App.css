@@ -1,5 +1,5 @@
 .heroBackground {
-      background: linear-gradient(180deg, rgba(9, 6, 40, 0.97) 26%, rgba(4, 4, 30, 1) 63%);  
+      background: linear-gradient(180deg, rgba(8, 4, 47, 0.97) 1%, rgb(1, 1, 6) 63%);  
 }
 .scale-up-center {
 	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
