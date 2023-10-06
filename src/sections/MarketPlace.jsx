@@ -14,10 +14,16 @@ const MarketPlace = () => {
                 <p className='text-white font-roboto font-bold text-sm lg:text-xl'>Price</p>
         </div>
         {currCompanyInfos.map((company) => {
-            return <div className='w-full px-4 lg:px-12 justify-between items-center flex  h-16 cursor-pointer'>
+            return <div className='w-[600px]  lg:w-full px-4 lg:px-12 justify-between items-center flex  h-16 cursor-pointer'>
+              <div className='w-[50px] lg:w-full lg:flex items-center justify-start'>
             <h4 className='font-roboto text-sm lg:text-lg text-white'>{company[0].companyName}</h4>
+            </div>
+            <div className='w-[100px] lg:w-full lg:flex items-center lg:mr-24 justify-end'>
             <p className='font-roboto text-sm text-white w-40'>{company[0].industry}</p>
+            </div>
+            <div className='w-[270px] lg:w-full lg:flex items-center justify-end'>
             <p className='font-roboto lg:text-lg text-green-400 text-sm'>{company[0].price} $</p>
+            </div>
     </div>
         })}
             
