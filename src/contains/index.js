@@ -8,9 +8,9 @@
 export const navLinks = [
 
     {"name":"Home","link":"#home"},
-    {"name":"About","link":"#about"},
-    {"name":"Learn","link":"#learn"},
-    {"name":"Predictions","link":"#predictions"}
+    {"name":"Market","link":"#about"},
+    {"name":"About","link":"#learn"},
+    {"name":"Join","link":"#predictions"}
 
 
 ]

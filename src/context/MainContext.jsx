@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useState} from "react";
+import { createContext, useEffect, useState} from "react";
 
 const GlobalContext = createContext();
 
@@ -12,6 +12,9 @@ export const Provider = ({children}) => {
         const request = await axios.get(`https://financialmodelingprep.com/api/v3/profile/${value}?apikey=4c824916585e48358ff4037bef8ae1b6`);
         setCurrCompanyInfos(request.data[0])
     }
+   
+    console.log(document.body.scrollTop)
+
 
     return (
         <GlobalContext.Provider value={{sendCompanyValue,currCompanyInfos}}>
