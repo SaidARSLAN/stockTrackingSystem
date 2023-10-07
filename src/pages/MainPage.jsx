@@ -18,7 +18,7 @@ const MainPage = () => {
       <section className='lg:py-36'>
         <ChooseUs />
       </section>
-      <section className='py-24 w-full'>
+      <section className='py-44 w-full'>
         <Create />
       </section>
       <Footer />
