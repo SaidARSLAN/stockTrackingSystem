@@ -14,7 +14,7 @@ const MainPage = () => {
       <MarketPlace />
       <section>
       </section>
-      <section className='py-24'>
+      <section className='lg:py-36'>
         <ChooseUs />
       </section>
       <Footer />
