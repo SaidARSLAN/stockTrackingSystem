@@ -10,15 +10,25 @@ export const InformationProvider = ({children}) => {
     const [nameSurname, setNameSurname] = useState("");
     const [email,setEmail] = useState("");
 
-
+    const sendData = (data,type) => {
+        if (type === "name") {
+            setNameSurname(data)
+            console.log(nameSurname)
+        }
+        else if (type === "email") {
+            setEmail(data)
+            console.log(email);
+        }
+        else {
+            console.log("Error!");
+        }
+    }
     const data = {
         nameSurname,
-        setNameSurname,
-        email,
-        setEmail
+        email
     }
     return (
-        <GlobalInformationContext.Provider value={{nameSurname,setNameSurname,email,setEmail}}>
+        <GlobalInformationContext.Provider value={{sendData,data}}>
             {children}
         </GlobalInformationContext.Provider>
     )
