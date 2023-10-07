@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 
 const NameAndSurname = () => {
     const {setStep} = useContext(GlobalContext);
+    
 
   return (
     <motion.form className='flex items-center justify-center space-x-4 w-full' initial={{x: "100vw"}} animate={{x:0}} transition={{type:"tween", duration:0.4}}>
