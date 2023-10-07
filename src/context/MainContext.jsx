@@ -7,6 +7,7 @@ const GlobalContext = createContext();
 
 export const Provider = ({children}) => {
     const [currCompanyInfos, setCurrCompanyInfos] = useState([])
+    const [step, setStep] = useState(0);
     const companies = ["AAPL","TSLA","AMZN","WMT","MSFT"]
     const getCompany = async () =>{
             const requests = companies.map((company) => {
@@ -30,7 +31,7 @@ export const Provider = ({children}) => {
     },[])
 
     return (
-        <GlobalContext.Provider value={{currCompanyInfos}}>
+        <GlobalContext.Provider value={{currCompanyInfos,step,setStep}}>
             {children}
         </GlobalContext.Provider>
     )

@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import NameAndSurname from '../components/NameAndSurname';
+import Mail from '../components/Mail';
+import GlobalContext from '../context/MainContext';
+import { FaSpinner } from 'react-icons/fa6';
 
 const Create = () => {
+    const {step,setStep} = useContext(GlobalContext)
   return (
     <section className='flex w-full items-center justify-center flex-col'>
         <h1 className='text-white font-roboto text-4xl font-bold tracking-wide'>Create Your <span>Own Wallet</span></h1>
-        <div className='flex w-full items-center justify-center my-12'>
-            <form className='flex items-center justify-center space-x-4 w-full'>
-                <input className='text-black px-4 py-2 font-roboto tracking-wide w-[280px]' placeholder='Your name And Surname'></input>
-                <button className='tableBackground text-white px-4 py-2 font-roboto font-bold tracking-wide'>Continue</button>
-            </form>
+        <div className='flex w-full items-center justify-center my-8'>
+            {step === 0 ? <button className='text-white tableBackground px-4 py-2 text-lg font-roboto font-bold tracking-wider' onClick={() => {setStep(step => step + 1)}}>Create</button> : step === 1 ? <NameAndSurname /> : step === 2 ? <Mail /> :<FaSpinner className='animate-spin' color='white'/>}
         </div>
     </section>
   )
