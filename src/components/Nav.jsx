@@ -84,7 +84,7 @@ const Nav = () => {
       {/* Large screen navbar items */}
       <ul className='hidden lg:flex flex-1 items-center justify-end space-x-12'>
         {navLinks.map((link) => {
-          return <NavLink to="" className="text-white font-roboto text-xl tracking-wide">{link.name}</NavLink>
+          return <NavLink to="" className="text-white font-roboto text-lg tracking-wide uppercase">{link.name}</NavLink>
         })}
       </ul>
 

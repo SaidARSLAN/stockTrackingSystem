@@ -4,6 +4,7 @@ import ChooseUs from '../sections/ChooseUs'
 import Footer from '../sections/Footer'
 import { Provider } from '../context/MainContext'
 import MarketPlace from '../sections/MarketPlace'
+import Create from '../sections/Create'
 const MainPage = () => {
 
   return (
@@ -16,6 +17,9 @@ const MainPage = () => {
       </section>
       <section className='lg:py-36'>
         <ChooseUs />
+      </section>
+      <section className='py-24 w-full'>
+        <Create />
       </section>
       <Footer />
       </Provider>
