@@ -2,9 +2,19 @@ import React, { useContext, useState } from 'react'
 import GlobalInformationContext from '../context/InformationContext'
 
 const ExpenseTrackerSystem = () => {
-    const {income} = useContext(GlobalInformationContext)
+    const {income,sendTransactionData} = useContext(GlobalInformationContext)
     const [transaction, setTransaction] = useState("");
-    const [price, setPrice] = useState(0);
+    const [price, setPrice] = useState("");
+    const [transactionList, settransactionList] = useState([]);
+
+
+    const handleClick = (event) => {
+        event.preventDefault();
+        settransactionList([...transactionList, {"name" : transaction,"price" : price}])
+        setTransaction("");
+        setPrice("");
+    }
+
   return (
     <div className='w-full flex flex-col items-center justify-center'>
     <div className='w-full flex items-center justify-evenly'>
@@ -17,11 +27,16 @@ const ExpenseTrackerSystem = () => {
         <h3 className='text-rose-500 text-lg font-roboto font-bold'>-200 $</h3>
         </div>
         </div>
+        <div className='flex items-center justify-center flex-col w-full px-16'>
+            {transactionList.map((query) => {
+                return <div className='flex w-full items-center justify-between border-2 px-2 py-1'><h3 className='text-white font-roboto font-bold'>{query.name}</h3><p className='text-rose-500'>{query.price} $</p></div>
+            })}
+        </div>
         <form className='w-full flex items-center justify-center my-4 space-x-2'>
             <div className='flex flex-col items-center justify-center space-y-2'>
             <input placeholder='Transaction' className='px-2 py-2 font-roboto font-bold tracking-wide' value={transaction} onChange={event => setTransaction(event.target.value)}></input>
-            <input placeholder='Price' className='px-2 py-2 font-roboto font-bold tracking-wide' value={price} onChange={event => setPrice(event.target.value)}></input>
-            <button className='w-full py-1 bg-white font-roboto font-bold'>Add</button>
+            <input placeholder='Price' className={price  === 0 ? 'px-2 py-2 font-roboto text-gray-400 font-bold tracking-wide'   : 'px-2 py-2 font-roboto font-bold tracking-wide'} value={price} onChange={event => setPrice(event.target.value)}></input>
+            <button className='w-full py-1 bg-white font-roboto font-bold' onClick={handleClick}>Add</button>
             </div>
         </form>
     </div>

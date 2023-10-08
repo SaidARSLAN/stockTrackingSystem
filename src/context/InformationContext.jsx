@@ -33,6 +33,7 @@ export const InformationProvider = ({children}) => {
     const sendIncomeData = (data) => {
         setIncome(data);
     }
+
     return (
         <GlobalInformationContext.Provider value={{sendData,data,sendIncomeData,income}}>
             {children}
