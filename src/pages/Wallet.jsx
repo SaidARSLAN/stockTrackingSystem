@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react'
 import GlobalInformationContext from '../context/InformationContext'
 import {CgProfile} from 'react-icons/cg'
 import Tracker from '../components/Tracker'
+import ExpenseTrackerSystem from '../components/ExpenseTrackerSystem'
 const Wallet = () => {
-    const [toggle, setToggle] = useState(false)
     const {data} = useContext(GlobalInformationContext)
 
   return (
@@ -19,7 +19,7 @@ const Wallet = () => {
             </div>
             </div>
             <div className='flex w-full items-center justify-start py-4'>
-            {toggle ? <Tracker/> : <button className='bg-white px-2 py-2 font-roboto font-bold' onClick={() => {setToggle(true)}}>Start Tracker</button>}
+            {data.trackerStep === 0 ? <button className='bg-white px-2 py-2 font-roboto font-bold' onClick={() => {data.setTrackerStep(prevStep => prevStep + 1)}}>Start Tracker</button> : data.trackerStep === 1 ? <Tracker /> : <ExpenseTrackerSystem /> }
             </div>
             </div>
     </div>

@@ -5,12 +5,12 @@ const Tracker = () => {
     
     const [income, setIncome] = useState(0);
 
-    const {sendIncomeData} = useContext(GlobalInformationContext);
+    const {sendIncomeData,data} = useContext(GlobalInformationContext);
 
     const handleClick = (event) => {
         event.preventDefault();
         sendIncomeData(income);
-        setIncome(0);
+        data.setTrackerStep(prevStep => prevStep + 1);
     }
   return (
     <form className='flex items-center justify-center space-x-2'>

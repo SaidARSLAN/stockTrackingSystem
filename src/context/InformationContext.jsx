@@ -9,7 +9,8 @@ export const InformationProvider = ({children}) => {
 
     const [nameSurname, setNameSurname] = useState("");
     const [email,setEmail] = useState("");
-
+    const [income, setIncome] = useState(0);
+    const [trackerStep, setTrackerStep] = useState(0);
     const sendData = (data,type) => {
         if (type === "name") {
             setNameSurname(data)
@@ -25,13 +26,15 @@ export const InformationProvider = ({children}) => {
     }
     const data = {
         nameSurname,
-        email
+        email,
+        trackerStep,
+        setTrackerStep,
     }
-    const sendIncomeData = (income) => {
-        console.log(income);
+    const sendIncomeData = (data) => {
+        setIncome(data);
     }
     return (
-        <GlobalInformationContext.Provider value={{sendData,data,sendIncomeData}}>
+        <GlobalInformationContext.Provider value={{sendData,data,sendIncomeData,income}}>
             {children}
         </GlobalInformationContext.Provider>
     )
