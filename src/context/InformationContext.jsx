@@ -27,8 +27,11 @@ export const InformationProvider = ({children}) => {
         nameSurname,
         email
     }
+    const sendIncomeData = (income) => {
+        console.log(income);
+    }
     return (
-        <GlobalInformationContext.Provider value={{sendData,data}}>
+        <GlobalInformationContext.Provider value={{sendData,data,sendIncomeData}}>
             {children}
         </GlobalInformationContext.Provider>
     )
