@@ -11,8 +11,8 @@ const Wallet = () => {
         <div className='w-full border-2 border-gray-500 px-4 py-4'>
           <div className='flex w-full items-center justify-between'>
           <div className='flex flex-col w-3/4 items-start justify-center'>
-            <h1 className='text-white font-roboto font-bold text-xl tracking-wide'>{data.nameSurname}</h1>
-            <h1 className='text-white font-roboto  text-sm tracking-wider'>{data.email}</h1>
+            <h1 className='text-white font-roboto font-bold text-xl tracking-wide max-[320px]:text-[10px]'>{data.nameSurname}</h1>
+            <h1 className='text-white font-roboto  text-sm tracking-wider max-[320px]:text-[10px]'>{data.email}</h1>
             </div>
             <div className='w-1/4 h-24 flex items-center justify-center'>
                 <CgProfile color='white' size={60}/>
