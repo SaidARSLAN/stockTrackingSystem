@@ -14,8 +14,8 @@ const Tracker = () => {
     }
   return (
     <form className='flex items-center justify-center space-x-2'>
-        <input placeholder='Monthly Income' className='px-2 py-2 font-roboto font-bold max-[320px]:w-[100px]' value={income} onChange={(event) => {setIncome(event.target.value)}}></input>
-        <button className='bg-white px-2 py-2 font-roboto font-bold max-[320px]:w-[50px] max-[320px]:text-[10px] max-[320px]:py-3 text-center max-[320px]:px-0' onClick={handleClick}>Continue</button>
+        <input placeholder='Monthly Income' className='px-2 py-2 font-roboto font-bold max-[390px]:w-[100px]' value={income} onChange={(event) => {setIncome(event.target.value)}}></input>
+        <button className='bg-white px-2 py-2 font-roboto font-bold max-[390px]:w-[50px] max-[390px]:text-[10px] max-[390px]:py-3 text-center max-[390px]:px-0' onClick={handleClick}>Continue</button>
     </form>
   )
 }
