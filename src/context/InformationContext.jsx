@@ -14,8 +14,10 @@ export const InformationProvider = ({children}) => {
     useEffect(() => {
         const name = JSON.parse(localStorage.getItem('name'));
         const email = JSON.parse(localStorage.getItem('mail'));
-        setEmail(email),
+        const income = JSON.parse(localStorage.getItem('income'))
+        setEmail(email);
         setNameSurname(name);
+        setIncome(income);
     },[])
     const sendData = (data,type) => {
         if (type === "name") {
@@ -38,6 +40,7 @@ export const InformationProvider = ({children}) => {
     }
     const sendIncomeData = (data) => {
         setIncome(data);
+        localStorage.setItem("income",JSON.stringify(parseInt(data)));
     }
 
     return (
