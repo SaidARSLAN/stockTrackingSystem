@@ -1,24 +1,36 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import GlobalInformationContext from '../context/InformationContext'
 import Modal from 'react-modal';
 import { motion } from 'framer-motion';
 
 
 const ExpenseTrackerSystem = () => {
-    const {income,sendTransactionData,transactionList} = useContext(GlobalInformationContext)
+    const {income,sendTransactionData} = useContext(GlobalInformationContext)
     const [transaction, setTransaction] = useState("");
+    const [transactionList, setTransactionList] = useState([])
     const [price, setPrice] = useState("");
     const [totalPrice, setTotalPrice] = useState(0);
     const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    const transactions = localStorage.getItem("transactionList");
+    setTransactionList(JSON.parse(transactions));
+  },[])
+
     const handleClick = (event) => {
         event.preventDefault();
-        sendTransactionData({"name" : transaction,"price" : price})
+        setTransactionList([...transactionList,{"name" : transaction,"price" : price}])
+        localStorage.setItem("transactionList",JSON.stringify([...transactionList,{"name" : transaction,"price" : price}]))
         setTotalPrice(prevTotalCount => prevTotalCount + parseInt(price));
         setTransaction("");
         setPrice("");
         setToggle(false)
     }
-
+    useEffect(() => {
+      let total = 0
+      transactionList && transactionList.map((transaction) => total += parseInt(transaction.price));
+      setTotalPrice(total);
+    },[])
     const customStyles = {
         content: {
           top: '50%',
