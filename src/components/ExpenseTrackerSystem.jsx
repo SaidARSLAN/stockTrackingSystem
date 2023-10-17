@@ -13,8 +13,11 @@ const ExpenseTrackerSystem = () => {
     const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
+    let total = 0
     const transactions = localStorage.getItem("transactionList");
     setTransactionList(JSON.parse(transactions));
+    transactionList.map((transaction) => total += parseInt(transaction.price));
+      setTotalPrice(total);
   },[])
 
     const handleClick = (event) => {
@@ -26,11 +29,6 @@ const ExpenseTrackerSystem = () => {
         setPrice("");
         setToggle(false)
     }
-    useEffect(() => {
-      let total = 0
-      transactionList && transactionList.map((transaction) => total += parseInt(transaction.price));
-      setTotalPrice(total);
-    },[])
     const customStyles = {
         content: {
           top: '50%',
