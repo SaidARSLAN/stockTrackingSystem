@@ -15,7 +15,7 @@ const ExpenseTrackerSystem = () => {
   useEffect(() => {
     let total = 0
     const transactions = localStorage.getItem("transactionList");
-    transactions && setTransactionList([...transactionList, JSON.parse(transactions)])
+    transactions && setTransactionList(JSON.parse(transactions))
     transactionList.map((transaction) => total += parseInt(transaction.price));
       setTotalPrice(total);
   },[])
