@@ -1,6 +1,9 @@
 import React, { useContext, useState } from 'react'
 import GlobalInformationContext from '../context/InformationContext'
 import Modal from 'react-modal';
+import { motion } from 'framer-motion';
+
+
 const ExpenseTrackerSystem = () => {
     const {income} = useContext(GlobalInformationContext)
     const [transaction, setTransaction] = useState("");
@@ -30,7 +33,7 @@ const ExpenseTrackerSystem = () => {
         },
       };
   return (
-    <div className='w-full flex flex-col items-center justify-center'>
+    <motion.div className='w-full flex flex-col items-center justify-center' initial={{scale:0.4}} animate={{scale:1}} transition={{duration:0.3,type:"tween"}}>
     <div className='w-full flex items-center justify-evenly'>
         <div className='flex items-center flex-col justify-center space-y-2'>
         <h3 className='text-white text-xl tracking-wider font-roboto font-bold'>Income</h3>
@@ -63,7 +66,7 @@ const ExpenseTrackerSystem = () => {
             </div>
         </form>
       </Modal>
-    </div>
+    </motion.div>
   ) 
 }
 

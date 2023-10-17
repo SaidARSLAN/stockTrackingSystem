@@ -5,7 +5,7 @@ import Tracker from '../components/Tracker'
 import ExpenseTrackerSystem from '../components/ExpenseTrackerSystem'
 const Wallet = () => {
     const {data} = useContext(GlobalInformationContext)
-
+  const [openTracker, setOpenTracker] = useState(false);
   return (
     <div className='w-full h-screen px-12'>
         <div className='w-full border-2 border-gray-500 px-4 py-4'>
@@ -19,7 +19,7 @@ const Wallet = () => {
             </div>
             </div>
             <div className='flex w-full items-center justify-start py-4'>
-            {data.trackerStep === 0 ? <button className='bg-white px-2 py-2 font-roboto font-bold' onClick={() => {data.setTrackerStep(prevStep => prevStep + 1)}}>Start Tracker</button> : data.trackerStep === 1 ? <Tracker /> : <ExpenseTrackerSystem /> }
+            {openTracker ? <ExpenseTrackerSystem /> :  data.trackerStep === 0 ? <button className='bg-white px-2 py-2 font-roboto font-bold' onClick={() => {data.setTrackerStep(prevStep => prevStep + 1);setOpenTracker(true);localStorage.setItem("openTracker",true)}}>Start Tracker</button> : data.trackerStep === 1 ? <Tracker /> : <ExpenseTrackerSystem /> }
             </div>
             </div>
     </div>
