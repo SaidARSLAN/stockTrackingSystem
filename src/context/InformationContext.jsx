@@ -11,10 +11,13 @@ export const InformationProvider = ({children}) => {
     const [email,setEmail] = useState("");
     const [income, setIncome] = useState(0);
     const [trackerStep, setTrackerStep] = useState(0);
+    const [transactionList, setTransactionList] = useState([]);
     useEffect(() => {
         const name = JSON.parse(localStorage.getItem('name'));
         const email = JSON.parse(localStorage.getItem('mail'));
-        const income = JSON.parse(localStorage.getItem('income'))
+        const income = JSON.parse(localStorage.getItem('income'));
+        const transaction = JSON.parse(localStorage.getItem('transactionList'));
+        setTransactionList(transaction)
         setEmail(email);
         setNameSurname(name);
         setIncome(income);
@@ -43,8 +46,13 @@ export const InformationProvider = ({children}) => {
         localStorage.setItem("income",JSON.stringify(parseInt(data)));
     }
 
+    const sendTransactionData = (data) => {
+        setTransactionList([...transactionList,data])
+        localStorage.setItem("transactionList",JSON.stringify([...transactionList,data]))
+    }
+
     return (
-        <GlobalInformationContext.Provider value={{sendData,data,sendIncomeData,income}}>
+        <GlobalInformationContext.Provider value={{sendData,data,sendIncomeData,income,sendTransactionData,transactionList}}>
             {children}
         </GlobalInformationContext.Provider>
     )

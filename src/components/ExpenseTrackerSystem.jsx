@@ -5,15 +5,14 @@ import { motion } from 'framer-motion';
 
 
 const ExpenseTrackerSystem = () => {
-    const {income} = useContext(GlobalInformationContext)
+    const {income,sendTransactionData,transactionList} = useContext(GlobalInformationContext)
     const [transaction, setTransaction] = useState("");
     const [price, setPrice] = useState("");
-    const [transactionList, settransactionList] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [toggle, setToggle] = useState(false);
     const handleClick = (event) => {
         event.preventDefault();
-        settransactionList([...transactionList, {"name" : transaction,"price" : price}])
+        sendTransactionData({"name" : transaction,"price" : price})
         setTotalPrice(prevTotalCount => prevTotalCount + parseInt(price));
         setTransaction("");
         setPrice("");
@@ -45,7 +44,7 @@ const ExpenseTrackerSystem = () => {
         </div>
         </div>
         <div className='flex items-center justify-center flex-col w-full px-16 space-y-4 py-4 max-[390px]:px-4'>
-            {transactionList.map((query) => {
+            {transactionList && transactionList.map((query) => {
                 return <div className='flex w-full items-center justify-between border-2 px-2 py-1'><h3 className='text-white font-roboto font-bold'>{query.name}</h3><p className='text-rose-500 max-[390px]:whitespace-nowrap'>{query.price} $</p></div>
             })}
         </div>
