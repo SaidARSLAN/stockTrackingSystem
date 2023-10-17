@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 
 const ExpenseTrackerSystem = () => {
-    const {income,sendTransactionData} = useContext(GlobalInformationContext)
+    const {income} = useContext(GlobalInformationContext)
     const [transaction, setTransaction] = useState("");
     const [transactionList, setTransactionList] = useState([])
     const [price, setPrice] = useState("");
@@ -15,7 +15,7 @@ const ExpenseTrackerSystem = () => {
   useEffect(() => {
     let total = 0
     const transactions = localStorage.getItem("transactionList");
-    setTransactionList(JSON.parse(transactions));
+    transactions && setTransactionList([...transactionList, JSON.parse(transactions)])
     transactionList.map((transaction) => total += parseInt(transaction.price));
       setTotalPrice(total);
   },[])
@@ -54,7 +54,7 @@ const ExpenseTrackerSystem = () => {
         </div>
         </div>
         <div className='flex items-center justify-center flex-col w-full px-16 space-y-4 py-4 max-[390px]:px-4'>
-            {transactionList && transactionList.map((query) => {
+            {transactionList.map((query) => {
                 return <div className='flex w-full items-center justify-between border-2 px-2 py-1'><h3 className='text-white font-roboto font-bold'>{query.name}</h3><p className='text-rose-500 max-[390px]:whitespace-nowrap'>{query.price} $</p></div>
             })}
         </div>
