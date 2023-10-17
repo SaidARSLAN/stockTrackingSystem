@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 
 
@@ -11,14 +11,20 @@ export const InformationProvider = ({children}) => {
     const [email,setEmail] = useState("");
     const [income, setIncome] = useState(0);
     const [trackerStep, setTrackerStep] = useState(0);
+    useEffect(() => {
+        const name = JSON.parse(localStorage.getItem('name'));
+        const email = JSON.parse(localStorage.getItem('mail'));
+        setEmail(email),
+        setNameSurname(name);
+    },[])
     const sendData = (data,type) => {
         if (type === "name") {
             setNameSurname(data)
-            console.log(nameSurname)
+            localStorage.setItem("name",JSON.stringify(data))
         }
         else if (type === "email") {
             setEmail(data)
-            console.log(email);
+            localStorage.setItem("mail",JSON.stringify(data))
         }
         else {
             console.log("Error!");
