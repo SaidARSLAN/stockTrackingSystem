@@ -4,7 +4,7 @@ import ChooseUs from '../sections/ChooseUs'
 import Footer from '../sections/Footer'
 import { Provider } from '../context/MainContext'
 import MarketPlace from '../sections/MarketPlace'
-import Create from '../sections/Create'
+import Join from '../sections/Join'
 const MainPage = () => {
 
   return (
@@ -18,8 +18,8 @@ const MainPage = () => {
       <section className='lg:py-36'>
         <ChooseUs />
       </section>
-      <section className='py-44 w-full'>
-        <Create />
+      <section className='h-screen w-full'>
+        <Join />  
       </section>
       <Footer />
       </Provider>

@@ -3,7 +3,6 @@ import './App.css'
 import Nav from './components/Nav'
 import MainPage from './pages/MainPage'
 import { InformationProvider } from './context/InformationContext'
-import Wallet from './pages/Wallet'
 
 function App() {
 
@@ -14,7 +13,6 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/wallet" element={<Wallet />} />
       </Routes>
     </main>
     </InformationProvider>
