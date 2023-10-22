@@ -7,16 +7,17 @@ const initialState = {
 }
 
 
-export const info = createSlice({
-    name : "information",
+const info = createSlice({
+    name : "info",
     initialState,
     reducers : {
         CREATE_ACCOUNT : (state,action) => {
-            state.name  = action.payload.name
-            state.email = action.payload.email
+            state.name = action.payload.name;
+            state.email = action.payload.email;
         }
     }
 })
 
 
 export const {CREATE_ACCOUNT} = info.actions
+export default info.reducer

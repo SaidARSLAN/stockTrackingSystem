@@ -1,11 +1,15 @@
 import React, { useContext, useRef, useState } from 'react'
 import GlobalContext from '../context/MainContext'
 import { motion } from 'framer-motion'
-
 import GlobalInformationContext from '../context/InformationContext'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { CREATE_ACCOUNT } from '../store/info'
 
 const Mail = () => {
+
+    const dispatch = useDispatch();
+
     let navigate = useNavigate();
     const [email, setEmail] = useState("");
     const {setStep} = useContext(GlobalContext)
@@ -16,6 +20,7 @@ const Mail = () => {
     const handleClick = (event) => {
         event.preventDefault();
         if (email !== "") {
+          dispatch(CREATE_ACCOUNT({"name":"TEST","email":email}));
           setStep(step => step + 1);
           sendData(email,"email")
           setTimeout(() => {

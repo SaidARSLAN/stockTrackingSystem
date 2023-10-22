@@ -2,10 +2,13 @@ import React, { useContext, useRef, useState } from 'react'
 import GlobalContext from '../context/MainContext'
 import { motion, steps } from 'framer-motion';
 import GlobalInformationContext from '../context/InformationContext';
+import { CREATE_ACCOUNT } from '../store/info';
+import { useDispatch } from 'react-redux';
 
 
 
 const NameAndSurname = () => {
+  const dispatch = useDispatch();
     const [nameSurname, setNameSurname] = useState("");
     const {setStep} = useContext(GlobalContext);
     const {sendData} = useContext(GlobalInformationContext);
@@ -15,6 +18,7 @@ const NameAndSurname = () => {
           nameSurname !== "" ? 
           (
           setStep(step => step + 1),
+          
           sendData(nameSurname,"name"))
           :
           inputRef.current.classList.add("border-2")
