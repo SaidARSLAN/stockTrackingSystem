@@ -8,7 +8,7 @@ const MarketPlace = () => {
         <div className='w-full'>
             <h1 className='text-white font-roboto text-3xl font-bold text-center lg:text-left lg:text-5xl my-4'>Market Update</h1>
         </div>
-        <div className='flex w-full items-center justify-between  px-4 lg:px-12  tableBackground py-4'>
+        <div className='flex w-full items-center justify-between  px-4 lg:px-12  tableBackground py-4 rounded-xl'>
           <div className='w-full'>
                 <h1 className='text-white font-roboto font-bold text-sm lg:text-xl'>Company Name</h1>
                 </div>
