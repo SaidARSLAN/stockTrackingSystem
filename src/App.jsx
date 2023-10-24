@@ -3,6 +3,7 @@ import './App.css'
 import Nav from './components/Nav'
 import MainPage from './pages/MainPage'
 import { InformationProvider } from './context/InformationContext'
+import Register from './pages/Register'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </main>
     </InformationProvider>
