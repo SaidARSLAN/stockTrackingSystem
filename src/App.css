@@ -45,4 +45,6 @@
               transform: scale(1);
     }
   }
-  
+.test {
+	display:flex;
+     }	
